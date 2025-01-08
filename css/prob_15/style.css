@@ -1,0 +1,31 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+nav{
+    display: flex;
+}
+nav .section1 {
+    color: blueviolet;
+}
+
+nav .section2 {
+    color: magenta;
+}
+
+nav .section3 {
+    color: darkblue
+}
+nav ul{
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: red;
+}
+nav a:active{
+    color:chartreuse;
+}
