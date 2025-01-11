@@ -1,0 +1,99 @@
+.container {
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "item1 item2 item3"
+        "item4 item5 item6"
+        "item7 item7 item7";
+    gap: 5px;
+}
+
+.rectangel {
+    width: 150px;
+    height: 20px;
+    background: #fff;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.grd1 {
+    background: linear-gradient(to Top,
+            #E195AB, #FFCCE1, #E195AB);
+}
+
+.grd2 {
+    background: linear-gradient(to Top,
+            #6A42C2, #8B5DFF, #6A42C2);
+}
+
+.grd3 {
+    background: linear-gradient(to Top,
+            #79D7BE, #C9E6F0, #79D7BE);
+}
+
+.grd4 {
+    background: linear-gradient(to Top,
+            #FF8383, #FADA7A, #FF8383);
+}
+
+
+.item1 {
+    grid-area: item1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center
+
+}
+
+.item2 {
+    grid-area: item2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center
+}
+
+.item3 {
+    grid-area: item3;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center
+}
+
+.item4 {
+    grid-area: item4;
+}
+
+.item5 {
+    grid-area: item5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center
+}
+
+.item6 {
+    grid-area: item6;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center
+}
+
+.item7 {
+    grid-area: item7;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center
+}
