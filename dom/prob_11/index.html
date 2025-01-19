@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="heading"></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dignissimos?</p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    const container = document.getElementsByClassName('container');
+
+    const heading = document.getElementById('heading');
+    heading.textContent = "Welcome to the DOM World!";
+    const para = document.getElementsByTagName('p')
+    for (i = 0; i < para.length; i++) {
+        para[i].style.color = "blue";
+    }
+ 
+
+    console.log(container)
+    for (i = 0; i < container.length; i++) {
+        container[i].style.backgroundColor = '#D84040';
+    }
+
+
+</script>

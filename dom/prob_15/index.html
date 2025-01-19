@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .line{
+            text-decoration: line-through;
+        }
+        #toggle{
+            
+        }
+        p{
+            width: 300px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter Your Task" id="inputTask">
+    <button id="AddTask">Add Task</button>
+    <ul id="task"></ul>
+    
+</body>
+
+</html>
+
+<script>
+    // const inputTask = document.getElementById('inputTask');
+    const AddTask = document.getElementById('AddTask')
+    const Task = document.getElementById('task');
+
+
+    AddTask.addEventListener('click', (e) => {
+        e.preventDefault()
+        const inputTask1 = document.getElementById('inputTask').value.trim();
+        const List = document.createElement('li');
+        if(!inputTask1){
+            alert('Plase fill task')
+        }else{
+            const Data={
+            task:inputTask1,
+            complete:false
+        }
+        List.innerHTML =`<p>${Data.task} </p>  <button  onclick="toggleTask()">Toggle</button>
+        <button id='delete'  onclick="deleteTask()">Delete</button>`;
+        Task.appendChild(List)
+        console.log(inputTask.value=" ")
+       
+        }
+        
+    inputTask1.value=" "
+        
+    })
+   
+</script>

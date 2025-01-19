@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+        </ul>
+        <button>Add Item</button>
+    </div>
+</body>
+
+</html>
+<script>
+    const linkList = document.querySelector('ul');
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', () => {
+        const list = document.createElement('li')
+        list.innerText = "New Item"
+        const mainList = linkList.children;
+
+        if (mainList.length % 2 == 0) {
+            list.style.fontWeight = 'bold';
+            list.style.color = 'blue';
+        } else {
+            list.style.fontWeight = 'italic';
+            list.style.color = 'red';
+        }
+
+       
+        linkList.append(list)
+    })
+
+
+
+
+
+</script>
