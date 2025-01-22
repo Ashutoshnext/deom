@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    body.light {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    body.dark {
+      background-color: #333333;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="light">
+  <form id="preferencesForm">
+    <label for="theme">Theme:</label>
+    <select id="theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <label for="language">Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+    </select>
+
+    <label for="notifications">Notifications:</label>
+    <input type="checkbox" id="notifications">
+
+    <button type="submit">Save Preferences</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('preferencesForm');
+    const theme = document.getElementById('theme');
+    const language = document.getElementById('language');
+    const notifications = document.getElementById('notifications');
+
+
+    const applyTheme = (selectedTheme) => {
+      document.body.className = selectedTheme;
+    };
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const preferences = {
+        theme: theme.value,
+        language: language.value,
+        notifications: notifications.checked,
+      };
+      localStorage.setItem('preferences', JSON.stringify(preferences));
+      applyTheme(preferences.theme);
+      alert('Preferences Saved!');
+    });
+
+    
+    window.onload = () => {
+      const preferences = localStorage.getItem('preferences');
+      if (preferences) {
+        const savedPreferences = JSON.parse(preferences);
+        theme.value = savedPreferences.theme; 
+        language.value = savedPreferences.language; 
+        notifications.checked = savedPreferences.notifications; 
+        applyTheme(savedPreferences.theme); 
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Notes App</h1>
+    <textarea id="notes" placeholder="Enter Your Notes"></textarea><br>
+    <button id="saveButton">NotesSaved</button>
+    <button id="loadButton">NotesLoad</button>
+    <button id="clearButton">NotesClear</button>
+
+    <p id="message"></p>
+
+    <script>
+        
+        window.onload = function() {
+            const savedNotes = localStorage.getItem('notes');
+            if (savedNotes) {
+                document.getElementById('notes').value = savedNotes;
+            }
+        };
+
+    
+        document.getElementById('saveButton').onclick = function() {
+            const notes = document.getElementById('notes').value.trim();
+
+            if (notes === "") {
+                document.getElementById('message').textContent = "notes not should empty";
+            } else {
+                localStorage.setItem('notes', notes);
+                document.getElementById('message').textContent = "notes sucessfully saved";
+            }
+        };
+
+        
+        document.getElementById('loadButton').onclick = function() {
+            const savedNotes = localStorage.getItem('notes');
+            if (savedNotes) {
+                document.getElementById('notes').value = savedNotes;
+                document.getElementById('message').textContent = "notes loaded";
+            } else {
+                document.getElementById('message').textContent = "Any Notes Not Found";
+            }
+        };
+
+        
+        document.getElementById('clearButton').onclick = function() {
+            localStorage.removeItem('notes');
+            document.getElementById('notes').value = "";
+            document.getElementById('message').textContent = "notes cleared";
+        };
+    </script>
+
+</body>
+</html>
