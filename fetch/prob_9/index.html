@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            padding: 20px;
+            width: 100%;
+        }
+        #cart{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+
+        }
+        button{
+            padding: 15px;
+        }
+        input{
+            width: 300px;
+            padding: 15px ;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="Search Movie By Name">
+        <button id="btn">FoundMovie</button>
+        <div id="cart">
+
+        </div>
+    </div>
+</body>
+</html>
+<script src="./index.js"></script>
